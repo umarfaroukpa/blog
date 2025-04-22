@@ -9,21 +9,21 @@ const BlogHeader: React.FC = () => {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="font-bold text-xl text-gray-900">
-                Your Blog Name
+                Hashtag
               </Link>
             </div>
             <nav className="ml-6 flex items-center space-x-8">
               <Link to="/" className="text-gray-500 hover:text-gray-900">
                 Home
               </Link>
-              <Link to="/about" className="text-gray-500 hover:text-gray-900">
+              <Link to="/aboutpage" className="text-gray-500 hover:text-gray-900">
                 About
               </Link>
-              <Link to="/tags" className="text-gray-500 hover:text-gray-900">
+              <Link to="/tagpage" className="text-gray-500 hover:text-gray-900">
                 Topics
               </Link>
-              <a 
-                href="/portfolio" 
+              <a
+                href="https://porfoilio.com"
                 className="text-blue-600 hover:text-blue-800 font-medium"
               >
                 View Portfolio →

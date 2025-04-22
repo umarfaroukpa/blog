@@ -1,0 +1,98 @@
+import React from 'react';
+import BlogLayout from '../components/BlogLayout';
+
+const AboutPage: React.FC = () => {
+  return (
+    <BlogLayout>
+      <div className="max-w-3xl">
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">Umar Farouk</h1>
+
+        <div className="mb-8">
+          <img
+            src="src/assets/my-pic.png"
+            alt="UmarFarouk"
+            className="w-32 h-32 rounded-full mb-4"
+          />
+          <h2 className="text-xl font-semibold mb-2">Umar Farouk</h2>
+          <p className="text-gray-600 italic">Fronend Developer</p>
+        </div>
+
+        <div className="prose max-w-none">
+          <p>
+            Welcome to my blog! I'm a passionate developer focused on creating web experiences
+            that are both functional and beautiful. I specialize in modern JavaScript frameworks,
+            particularly React, and have a keen interest in user interface design.
+          </p>
+
+          <h3>My Background</h3>
+          <p>
+            With a background in [your background/education], I've spent the last [3] years
+            working on various web development projects ranging from e-commerce platforms
+            to data visualization dashboards. My approach combines technical expertise with
+            a deep appreciation for good design and user experience.
+          </p>
+
+          <h3>What I Write About</h3>
+          <p>
+            On this blog, I share my thoughts, experiences:
+          </p>
+          <ul>
+            <li>Web development best practices</li>
+            <li>React and modern JavaScript</li>
+            <li>UI/UX design principles</li>
+            <li>Performance optimization</li>
+            <li>Career development in tech</li>
+          </ul>
+
+          <h3>My Portfolio</h3>
+          <p>
+            Interested in seeing my work? Check out my <a href="/portfolio" className="text-blue-600 hover:text-blue-800">portfolio</a>
+            to see projects I've created and learn more about my skills and experience.
+          </p>
+
+          <h3>Connect With Me</h3>
+          <p>
+            I'm always open to connecting with fellow developers, designers, and tech enthusiasts.
+            Feel free to reach out through any of these channels:
+          </p>
+
+          <div className="flex space-x-4 my-4">
+            <a href="https://github.com/umarfaroukpa" className="text-gray-700 hover:text-gray-900">
+              <span className="sr-only">GitHub</span>
+              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+              </svg>
+            </a>
+            <a href="https://x.com/FaroukIlyas" className="text-gray-700 hover:text-gray-900">
+              <span className="sr-only">Twitter</span>
+              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/umar-farouk-ilyas-51a509170/" className="text-gray-700 hover:text-gray-900">
+              <span className="sr-only">LinkedIn</span>
+              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+            <a href="mailto:yasmarfaq51@gmail.com" className="text-gray-700 hover:text-gray-900">
+              <span className="sr-only">Email</span>
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
+          </div>
+
+          <h3>Thanks for Visiting!</h3>
+          <p>
+            Thank you for taking the time to read about me. I hope you find the content on
+            this blog useful and informative. Don't hesitate to leave comments or reach out
+            if you have questions or just want to connect!
+          </p>
+        </div>
+      </div>
+    </BlogLayout>
+  );
+};
+
+export default AboutPage;
