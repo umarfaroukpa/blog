@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { posts } from '../data/Posts';
+import profilePic from '../assets/my-pic.png';
 
 // Get all unique tags from posts
 const allTags = Array.from(
@@ -15,9 +16,14 @@ const BlogSidebar: React.FC = () => {
         <h3 className="text-lg font-medium mb-4 text-gray-900">About Me</h3>
         <div className="flex items-center mb-3">
           <img
-            src="src/assets/my-pic.png"
-            alt="Author"
-            className="w-12 h-12 rounded-full mr-3"
+            src={profilePic}
+            alt="UmarFarouk"
+            className="w-32 h-32 rounded-full mb-4"
+            onError={(e) => {
+              console.error("Image failed to load");
+              // Fallback image
+              e.currentTarget.src = "https://via.placeholder.com/128";
+            }}
           />
           <span className="font-medium">Umar Farouk</span>
         </div>
