@@ -1,6 +1,5 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/homepage.tsx';
+import HomePage from './pages/HomePage.tsx';
 import PostPage from './pages/PostPage';
 import TagPage from './pages/tagpage.tsx';
 import AboutPage from './pages/aboutpage.tsx'
