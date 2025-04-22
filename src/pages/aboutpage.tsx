@@ -3,6 +3,8 @@ import BlogLayout from '../components/BlogLayout';
 import profilePic from '../assets/my-pic.png';
 
 const AboutPage: React.FC = () => {
+
+  console.log("Profile image path:", profilePic);
   return (
     <BlogLayout>
       <div className="max-w-3xl">
@@ -10,9 +12,14 @@ const AboutPage: React.FC = () => {
 
         <div className="mb-8">
           <img
-            src={profilePic} 
+            src={profilePic}
             alt="UmarFarouk"
             className="w-32 h-32 rounded-full mb-4"
+            onError={(e) => {
+              console.error("Image failed to load");
+              // Fallback image
+              e.currentTarget.src = "https://via.placeholder.com/128"; 
+            }}
           />
           <h2 className="text-xl font-semibold mb-2">Umar Farouk</h2>
           <p className="text-gray-600 italic">Frontend Developer</p>
