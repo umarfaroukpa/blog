@@ -10,7 +10,7 @@ const allTags = Array.from(
 
 const BlogSidebar: React.FC = () => {
   return (
-    <aside className="space-y-8">
+    <aside className="space-y-6">
       <div>
         <h3 className="text-lg font-medium mb-4 text-gray-900">About Me</h3>
         <div className="flex items-center mb-3">
