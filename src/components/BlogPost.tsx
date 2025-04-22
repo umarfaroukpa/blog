@@ -3,18 +3,37 @@ import { Link } from 'react-router-dom';
 import { BlogPost as BlogPostType } from '../types/BlogTypes';
 import ReactMarkdown from 'react-markdown';
 
+// Import all your images
+import reactLogo from '../assets/reactjs_logo_icon_170805-removebg-preview.png';
+import uiLogo from '../assets/user-interface-removebg-preview.png';
+import foundationalLogo from '../assets/foudemental-removebg-preview.png';
+import htmlLogo from '../assets/html.png';
+import seoImage from '../assets/SEO.jpg';
+
+// Create a mapping of image paths to their imports
+const imageMap: Record<string, string> = {
+  'src/assets/reactjs_logo_icon_170805-removebg-preview.png': reactLogo,
+  'src/assets/user-interface-removebg-preview.png': uiLogo,
+  'src/assets/foudemental-removebg-preview.png': foundationalLogo,
+  'src/assets/html.png': htmlLogo,
+  'src/assets/SEO.jpg': seoImage,
+};
+
 interface BlogPostProps {
   post: BlogPostType;
   isExcerpt?: boolean;
 }
 
 const BlogPost: React.FC<BlogPostProps> = ({ post, isExcerpt = false }) => {
+  // Handle the case where coverImage might be undefined
+  const imageSrc = post.coverImage ? (imageMap[post.coverImage] || post.coverImage) : '';
+  
   return (
     <article className="mb-12">
       {post.coverImage && (
         <div className="mb-5">
           <img 
-            src={post.coverImage} 
+            src={imageSrc} 
             alt={post.title} 
             className="w-full h-64 object-cover rounded-lg"
           />

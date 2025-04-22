@@ -1,5 +1,6 @@
 import { BlogPost } from '../types/BlogTypes';
 
+
 export const posts: BlogPost[] = [
   {
     id: '1',
@@ -392,5 +393,5 @@ _ Keep it under 60 characters to avoid truncation.
     coverImage: 'src/assets/SEO.jpg',
     readingTime: 5
   }
-  
+
 ];
