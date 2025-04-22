@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogLayout from '../components/BlogLayout';
+import profilePic from '../assets/my-pic.png';
 
 const AboutPage: React.FC = () => {
   return (
@@ -9,12 +10,12 @@ const AboutPage: React.FC = () => {
 
         <div className="mb-8">
           <img
-            src="src/assets/my-pic.png"
+            src={profilePic} 
             alt="UmarFarouk"
             className="w-32 h-32 rounded-full mb-4"
           />
           <h2 className="text-xl font-semibold mb-2">Umar Farouk</h2>
-          <p className="text-gray-600 italic">Fronend Developer</p>
+          <p className="text-gray-600 italic">Frontend Developer</p>
         </div>
 
         <div className="prose max-w-none">

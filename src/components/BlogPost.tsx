@@ -9,7 +9,7 @@ import uiLogo from '../assets/user-interface-removebg-preview.png';
 import foundationalLogo from '../assets/foudemental-removebg-preview.png';
 import htmlLogo from '../assets/html.png';
 import seoImage from '../assets/SEO.jpg';
-import aboutImage from '../src/assets/my-pic.png'
+
 
 // Create a mapping of image paths to their imports
 const imageMap: Record<string, string> = {
@@ -18,7 +18,7 @@ const imageMap: Record<string, string> = {
   'src/assets/foudemental-removebg-preview.png': foundationalLogo,
   'src/assets/html.png': htmlLogo,
   'src/assets/SEO.jpg': seoImage,
-  'src/assets/my-pic.png': aboutImage,
+   
 };
 
 interface BlogPostProps {
