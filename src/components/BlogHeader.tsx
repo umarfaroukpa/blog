@@ -23,7 +23,8 @@ const BlogHeader: React.FC = () => {
                 Topics
               </Link>
               <a
-                href="https://portfolio-five-wine-81.vercel.app"
+              target='_blank'
+                href="https://umarfaroukilyas.vercel.app/"
                 className="text-blue-600 hover:text-blue-800 font-medium"
               >
                 View Portfolio →

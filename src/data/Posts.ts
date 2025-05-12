@@ -392,6 +392,122 @@ _ Keep it under 60 characters to avoid truncation.
     tags: ['html', 'css', 'javascript', 'Frontend'],
     coverImage: 'src/assets/SEO.jpg',
     readingTime: 5
+  },
+  {
+    id: '6',
+    title: 'Handling Webpack Performance Warnings',
+    date: '2025-05-12',
+    author: 'Umar Farouk',
+    excerpt: 'A Comprehensive Guide to Handling Webpack Performance Warnings',
+    content: `
+  **Introduction**
+
+    When working with modern JavaScript applications, 
+    encountering Webpack performance warnings is common.
+    These warnings don't indicate errors in your code but 
+    rather suggest optimizations to improve your application's loading performance. 
+
+
+  **Here's what you need to know about these warnings and how to address them effectively.**
+
+    
+  **Understanding Webpack Performance Warnings**
+
+    Webpack generates performance warnings when your bundled 
+    files exceed recommended size limits.
+
+  **The most common warning you'll see is:**
+
+  "Entrypoint size limit warning: Your bundled JavaScript files exceed the recommended 244 KiB limit"
+  **This warning appears because:**
+
+  Your initial bundle size is larger than Webpack's default threshold (244 KiB)
+
+Large bundles can negatively impact page load times
+
+The warning suggests your application could benefit from optimization
+
+**Effective Solutions for Webpack Performance Warnings**
+
+**1. Implement Code Splitting**
+
+Code splitting is the most effective way to address bundle size issues:
+// Instead of static imports  
+// import ContactPage from './ContactPage';  
+
+// Use dynamic imports  
+const loadContactPage = () => import('./ContactPage');  
+
+// Trigger when needed  
+contactButton.addEventListener('click', () => {  
+  loadContactPage().then(module => {  
+    module.default.init();  
+  });  
+});  
+
+**2. Leverage Lazy Loading for Routes**
+
+For single-page applications, lazy load route components:
+const routes = [  
+  {  
+    path: '/contact',  
+    component: () => import('./views/ContactView'),  
+  },  
+  // ...other routes  
+];  
+**3. Optimize Your Assets**
+
+Compress images using tools like ImageOptim or Squoosh
+
+Convert images to modern formats like WebP
+
+Remove unused CSS with PurgeCSS
+
+Eliminate dead JavaScript code with Tree Shaking
+
+**4. Webpack Configuration Options**
+
+If the warnings aren't critical for your use case:
+// webpack.config.js  
+module.exports = {  
+  performance: {  
+    hints: 'warning', // or false to disable  
+    maxEntrypointSize: 512000, // 500 KiB  
+    maxAssetSize: 512000,  
+  },  
+  // ...other config  
+};  
+
+**When to Ignore Performance Warnings**
+
+Regularly audit your bundle using webpack-bundle-analyzer
+
+Set performance budgets in your CI pipeline
+
+Monitor real user metrics to identify actual performance issues
+
+Keep dependencies updated to benefit from smaller, optimized versions
+
+
+
+
+**Conclusion**
+
+Webpack performance warnings serve as helpful indicators for potential optimizations rather than critical errors. By implementing code splitting, lazy loading, and asset optimization, you can significantly improve your application's loading performance. However, remember that optimization should always be balanced against development productivity and your specific application requirements.
+
+For projects where these warnings aren't relevant, a simple configuration change can silence them while still maintaining visibility into other important build issues.
+    
+**THANKS FOR READING!**
+    
+    `,
+
+
+
+
+    slug: 'Handling Webpack Performance Warnings',
+    tags: ['webpack', 'html', 'css', 'javascript', 'Frontend'],
+    coverImage: 'src/assets/images-webpack.png',
+    readingTime: 8
   }
 
 ];

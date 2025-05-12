@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { posts } from '../data/Posts';
 import profilePic from '../assets/my-pic.png';
@@ -10,6 +9,18 @@ const allTags = Array.from(
 ).sort();
 
 const BlogSidebar: React.FC = () => {
+  // Sort posts by date in descending order (most recent first)
+  const sortedPosts = useMemo(() => {
+    return [...posts].sort((a, b) => {
+      // Convert dates to timestamps for comparison
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+      
+      // Sort in descending order (most recent first)
+      return dateB - dateA;
+    });
+  }, []);
+
   return (
     <aside className="space-y-6">
       <div>
@@ -58,7 +69,7 @@ const BlogSidebar: React.FC = () => {
       <div>
         <h3 className="text-lg font-medium mb-4 text-gray-900">Recent Posts</h3>
         <div className="space-y-4">
-          {posts.slice(0, 3).map(post => (
+          {sortedPosts.slice(0, 3).map(post => (
             <div key={post.id}>
               <Link
                 to={`/post/${post.slug}`}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import BlogLayout from '../components/BlogLayout';
 import BlogPost from '../components/BlogPost';
@@ -6,10 +6,22 @@ import { posts } from '../data/Posts';
 
 const TagPage: React.FC = () => {
   const { tag } = useParams<{ tag: string }>();
-  const filteredPosts = posts.filter(post => 
-    post.tags.some(t => t.toLowerCase() === tag?.toLowerCase())
-  );
-  
+
+  // Memoized filtering and sorting of posts
+  const filteredPosts = useMemo(() => {
+    // Filter posts that have the tag (case-insensitive)
+    const matchedPosts = posts.filter(post =>
+      post.tags.some(t => t.toLowerCase() === tag?.toLowerCase())
+    );
+
+    // Sort filtered posts by date in descending order
+    return matchedPosts.sort((a, b) => {
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+      return dateB - dateA;
+    });
+  }, [tag]);
+
   if (filteredPosts.length === 0) {
     return (
       <BlogLayout>
@@ -23,7 +35,7 @@ const TagPage: React.FC = () => {
       </BlogLayout>
     );
   }
-  
+
   return (
     <BlogLayout>
       <div className="mb-8">
@@ -34,7 +46,7 @@ const TagPage: React.FC = () => {
           Showing {filteredPosts.length} post{filteredPosts.length !== 1 ? 's' : ''}
         </p>
       </div>
-      
+
       <div className="space-y-16">
         {filteredPosts.map(post => (
           <BlogPost key={post.id} post={post} isExcerpt={true} />

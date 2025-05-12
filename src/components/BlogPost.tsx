@@ -9,6 +9,7 @@ import uiLogo from '../assets/user-interface-removebg-preview.png';
 import foundationalLogo from '../assets/foudemental-removebg-preview.png';
 import htmlLogo from '../assets/html.png';
 import seoImage from '../assets/SEO.jpg';
+import webpack from '../assets/images-webpack.png'
 
 
 // Create a mapping of image paths to their imports
@@ -18,7 +19,8 @@ const imageMap: Record<string, string> = {
   'src/assets/foudemental-removebg-preview.png': foundationalLogo,
   'src/assets/html.png': htmlLogo,
   'src/assets/SEO.jpg': seoImage,
-   
+  'src/assets/images-webpack.png': webpack,
+
 };
 
 interface BlogPostProps {
@@ -29,19 +31,19 @@ interface BlogPostProps {
 const BlogPost: React.FC<BlogPostProps> = ({ post, isExcerpt = false }) => {
   // Handle the case where coverImage might be undefined
   const imageSrc = post.coverImage ? (imageMap[post.coverImage] || post.coverImage) : '';
-  
+
   return (
     <article className="mb-12">
       {post.coverImage && (
         <div className="mb-5">
-          <img 
-            src={imageSrc} 
-            alt={post.title} 
+          <img
+            src={imageSrc}
+            alt={post.title}
             className="w-full h-64 object-cover rounded-lg"
           />
         </div>
       )}
-      
+
       <h2 className="text-2xl font-bold text-gray-900 mb-2">
         {isExcerpt ? (
           <Link to={`/post/${post.slug}`} className="hover:text-blue-600">
@@ -51,7 +53,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, isExcerpt = false }) => {
           post.title
         )}
       </h2>
-      
+
       <div className="flex items-center text-sm text-gray-500 mb-4">
         <span>{post.date}</span>
         <span className="mx-2">•</span>
@@ -59,11 +61,11 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, isExcerpt = false }) => {
         <span className="mx-2">•</span>
         <span>{post.author}</span>
       </div>
-      
+
       {isExcerpt ? (
         <>
           <p className="text-gray-600 mb-4">{post.excerpt}</p>
-          <Link 
+          <Link
             to={`/post/${post.slug}`}
             className="text-blue-600 font-medium hover:underline"
           >
@@ -75,14 +77,14 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, isExcerpt = false }) => {
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
       )}
-      
+
       {!isExcerpt && (
         <div className="mt-8 pt-6 border-t">
           <h3 className="text-lg font-medium mb-3">Tags:</h3>
           <div className="flex flex-wrap gap-2">
             {post.tags.map(tag => (
-              <Link 
-                key={tag} 
+              <Link
+                key={tag}
                 to={`/tag/${tag.toLowerCase()}`}
                 className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm"
               >
